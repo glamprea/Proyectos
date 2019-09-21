@@ -1,0 +1,10 @@
+---
+- name: Copy file
+  hosts: all
+  tasks:
+  - name: Copy file
+    copy:
+      src=/var/lib/awx/projects/glamprea/rep.txt
+      dest=/tmp/rep.txt
+#      remote_src=no
+#      mode=preserve
