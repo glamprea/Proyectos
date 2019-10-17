@@ -1,8 +1,0 @@
----
-- name: Check Services
-  hosts: all
-  tasks:
-  - name: Validate Services
-    service:
-      name: httpd
-      state: started
