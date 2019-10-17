@@ -1,0 +1,9 @@
+---
+- name: Copy file
+  hosts: all
+  tasks:
+  - name: Copy file Windows
+    win_copy:
+      src: /var/lib/awx/projects/glamprea/rep.txt
+      dest: C:\Windows\System32\drivers\etc\rep
+      backup: yes

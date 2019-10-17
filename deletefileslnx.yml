@@ -1,0 +1,17 @@
+---
+- name: Delete Files Older 7 Day
+  hosts: all
+  tasks:
+  - name: Ansible delete files older than 7 days
+    find:
+      paths: /tmp
+      patterns: 'rep.*'
+      age: 7d
+      file_type: file
+    register: files_to_delete
+
+  - name: Ansible remove files older than a date example
+    file:
+      path: "{{ item.path }}"
+      state: absent
+    with_items: "{{ files_to_delete.files }}"
