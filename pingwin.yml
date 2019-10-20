@@ -1,5 +1,5 @@
 ---
-- name: Ping 
+- name: Ping a Servidores Windows
   hosts: all 
   tasks:
   - name: ping
