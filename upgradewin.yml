@@ -10,8 +10,8 @@
     win_updates:
       category_names:
         - SecurityUpdates
-		- CriticalUpdates
-		- UpdateRollups
+        - CriticalUpdates
+        - UpdateRollups
       state: installed
       register: update_result
 
