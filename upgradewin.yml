@@ -2,10 +2,6 @@
 - name: Update and Reboot Windows Servers
   hosts: all
   tasks:
-  - name: Ensure common OS updates are current
-    win_updates:
-      register: update_result
-  
   - name: Install all security, critical, and rollup updates
     win_updates:
       category_names:
