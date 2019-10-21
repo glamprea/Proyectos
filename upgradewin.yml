@@ -8,7 +8,6 @@
         - SecurityUpdates
         - CriticalUpdates
         - UpdateRollups
-      state: installed
     register: update_result
 
   - name: Reboot host if required
