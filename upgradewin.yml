@@ -6,11 +6,12 @@
     win_updates:
       register: update_result
   
-  - name: Install all critical and security updates
+  - name: Install all security, critical, and rollup updates
     win_updates:
       category_names:
-      - CriticalUpdates
-      - SecurityUpdates
+        - SecurityUpdates
+		- CriticalUpdates
+		- UpdateRollups
       state: installed
       register: update_result
 
