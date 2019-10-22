@@ -4,6 +4,6 @@
   tasks:
   - name: Copy file Linux
     copy:
-      src=https://github.com/glamprea/Proyectos/blob/master/rep.txt
+      src=https://github.com/glamprea/Proyectos/rep.txt
       dest=/tmp/replicado
       backup=yes
