@@ -1,0 +1,9 @@
+---
+- name: Copy file
+  hosts: all
+  tasks:
+  - name: Copy file Linux
+    copy:
+      src=https://github.com/glamprea/Proyectos/blob/master/rep.txt
+      dest=/tmp/replicado
+      backup=yes
