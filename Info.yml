@@ -4,5 +4,5 @@
   tasks:
   - name: Obtain information about a file
     win_stat:
-      path:D:\rep.txt
+      path: D:\rep.txt
     register: file_info
