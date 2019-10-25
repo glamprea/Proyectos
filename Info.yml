@@ -1,6 +1,5 @@
 ---
-- name: Obtain information about a file 
-  hosts: all 
+- hosts: all 
   tasks:
   - name: Obtain information about a file
     win_stat:
