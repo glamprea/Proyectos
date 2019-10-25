@@ -5,3 +5,11 @@
     win_stat:
       path: D:\rep.txt
     register: file_info
+    
+  - name: Save the result of 'whoami' in 'whoami_out'
+    win_command: whoami
+    register: whoami_info
+    
+  - name: Example from an Ansible Playbook
+    win_ping:
+    register: ping_info
