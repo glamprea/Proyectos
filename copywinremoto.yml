@@ -1,0 +1,9 @@
+---
+- name: Copy file from url
+  hosts: all
+  tasks:
+  - name: Copy file Windows from URL
+    win_get_url:
+      url: https://github.com/glamprea/Proyectos/blob/master/rep.txt
+      dest: C:\rephosts
+      backup: yes
