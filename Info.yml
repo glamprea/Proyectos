@@ -6,7 +6,7 @@
       path: C:\Windows\System32\drivers\etc\hosts
     register: file_info
     
-  - name: Save the result of 'whoami' in 'whoami_out'
+  - name: Save the result of 'whoami' in 'whoami_info'
     win_command: whoami
     register: whoami_info
     
