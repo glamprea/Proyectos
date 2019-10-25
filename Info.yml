@@ -13,3 +13,8 @@
   - name: Example from an Ansible Playbook
     win_ping:
     register: ping_info
+    
+  - win_shell: ipconfig
+    args:
+      executable: cmd
+    register: ip_info
