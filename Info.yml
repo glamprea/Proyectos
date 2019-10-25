@@ -1,11 +1,12 @@
 ---
 - hosts: all 
   tasks:
-  - name: Save the result of 'whoami' in 'whoami_info'
+  - name: Save the result of hostname 2
     win_command: cmd.exe /c hostname
-    register: whoami_info
+    register: host1_info
  
-  - win_shell: hostname
+  - name: Save the result of hostname 2
+    win_shell: hostname
     args:
       executable: cmd
-    register: ip_info
+    register: hots2_info
