@@ -7,14 +7,14 @@
     register: file_info
     
   - name: Save the result of 'whoami' in 'whoami_info'
-    win_command: whoami
+    win_command: cmd.exe /c hostname
     register: whoami_info
     
   - name: Example from an Ansible Playbook
     win_ping:
     register: ping_info
     
-  - win_shell: ipconfig
+  - win_shell: hostname
     args:
       executable: cmd
     register: ip_info
