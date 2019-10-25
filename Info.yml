@@ -3,7 +3,7 @@
   tasks:
   - name: Obtain information about a file
     win_stat:
-      path: D:\rep.txt
+      path: C:\Windows\System32\drivers\etc\hosts
     register: file_info
     
   - name: Save the result of 'whoami' in 'whoami_out'
