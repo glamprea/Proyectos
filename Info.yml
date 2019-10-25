@@ -1,7 +1,7 @@
 ---
 - hosts: all 
   tasks:
-  - name: Save the result of hostname 2
+  - name: Save the result of hostname 1
     win_command: cmd.exe /c hostname
     register: host1_info
  
