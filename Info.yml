@@ -5,4 +5,4 @@
     win_command: cmd.exe /c ping 172.22.1.105
     register: result
   - debug: 
-    var: result
+      var: result
