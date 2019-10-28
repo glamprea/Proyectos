@@ -1,8 +1,7 @@
 ---
-- hosts: all 
-  tasks:
-  - name: Save the result of hostname 1
-    win_command: cmd.exe ping 172.22.1.105
-    register: result
-  - debug: 
-      var: result
+- shell: /usr/bin/uptime
+  register: result
+
+- debug:
+    var: result
+    verbosity: 2
