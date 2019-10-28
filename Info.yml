@@ -2,4 +2,6 @@
 - hosts: all 
   tasks:
   - name: Save the result of hostname 1
-    win_command: cmd.exe ipconfig
+    win_command: ipconfig
+    register: ipaddr
+  - debug: var=ipaddr
