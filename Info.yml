@@ -1,8 +1,20 @@
 ---
 - hosts: all 
   tasks:
-  - name: Save the result of command
-    win_command: cmd.exe /c ping 172.22.1.105
-    register: result
+  - name: Ping
+    win_command: cmd.exe /c ping localhost
+    register: ping
   - debug: 
-      var: result
+      var: ping
+      
+  - name: Telnet
+    win_command: cmd.exe /c telnet localhost 3389
+    register: telnet
+  - debug: 
+      var: telnet
+      
+  - name: IP
+    win_command: cmd.exe /c ipconfig
+    register: ip
+  - debug: 
+      var: ip
