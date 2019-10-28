@@ -4,11 +4,11 @@
   - name: Ping
     win_command: cmd.exe /c ping localhost
     register: ping
-  - debug: 
-      var: ping
+#  - debug: 
+#      var: ping
  
   - name: IP
     win_command: cmd.exe /c ipconfig
     register: ip
-  - debug: 
-      var: ip
+#  - debug: 
+#      var: ip
