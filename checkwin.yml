@@ -50,4 +50,11 @@
     register: hosts
   - debug: 
       var: hosts
-  
+      
+  - name: Puerto 8400 Commvault
+    win_command: cmd.exe /c cvping localhost -port 8400
+    args:
+      chdir: C:\Program Files\Commvault\ContentStore\Base
+    register: port
+  - debug: 
+      var: port
