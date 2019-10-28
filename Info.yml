@@ -6,13 +6,7 @@
     register: ping
   - debug: 
       var: ping
-      
-  - name: Telnet
-    win_command: cmd.exe /c telnet localhost 3389
-    register: telnet
-  - debug: 
-      var: telnet
-      
+ 
   - name: IP
     win_command: cmd.exe /c ipconfig
     register: ip
