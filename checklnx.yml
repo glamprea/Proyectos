@@ -13,6 +13,12 @@
   - debug: 
       var: hostname
       
+  - name: Memoria
+    command: free -m
+    register: memoria
+  - debug: 
+      var: memoria
+      
   - name: Prueba Ping
     command: ping -c3 cs02-cap-triara
     register: ping
