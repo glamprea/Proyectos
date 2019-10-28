@@ -2,7 +2,7 @@
 - hosts: all 
   tasks:
   - name: Ping
-    win_command: cmd.exe /c ping -c 3 localhost
+    win_command: cmd.exe /c ping localhost
     register: ping
   - debug: 
       var: ping
