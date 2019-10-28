@@ -4,9 +4,3 @@
   - name: Save the result of hostname 1
     win_command: cmd.exe ipconfig
     register: ip_info
-     
-  - name: Save the result of hostname 2
-    win_shell: hostname
-    args:
-      executable: cmd
-    register: hots2_info
