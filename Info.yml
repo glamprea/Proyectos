@@ -11,7 +11,7 @@
     win_command: cmd.exe /c time /t
     register: hora
   - debug: 
-      var: hota
+      var: hora
       
   - name: Nombre Host
     win_command: cmd.exe /c hostname
