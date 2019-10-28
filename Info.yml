@@ -2,13 +2,19 @@
 - hosts: all 
   tasks:
   - name: Ping
-    win_command: cmd.exe /c ping localhost
+    win_command: cmd.exe /c ping -c 3 localhost
     register: ping
-#  - debug: 
-#      var: ping
+  - debug: 
+      var: ping
  
-  - name: IP
+  - name: Direcciones IP
     win_command: cmd.exe /c ipconfig
     register: ip
-#  - debug: 
-#      var: ip
+  - debug: 
+      var: ip
+      
+  - name: Rutas
+    win_command: cmd.exe /c route print
+    register: route
+  - debug: 
+      var: route
