@@ -1,8 +1,26 @@
 ---
 - hosts: all 
   tasks:
-  - name: Ping
-    win_command: cmd.exe /c ping localhost
+  - name: Fecha
+    win_command: cmd.exe /c date /t
+    register: fecha
+  - debug: 
+      var: fecha
+
+  - name: Hora
+    win_command: cmd.exe /c time /t
+    register: hora
+  - debug: 
+      var: hota
+      
+  - name: Nombre Host
+    win_command: cmd.exe /c hostname
+    register: hostname
+  - debug: 
+      var: hostname
+      
+  - name: Prueba Ping
+    win_command: cmd.exe /c ping cs02-cap-triara
     register: ping
   - debug: 
       var: ping
@@ -18,3 +36,10 @@
     register: route
   - debug: 
       var: route
+      
+  - name: Servicios
+    win_command: cmd.exe /c net start
+    register: servicios
+  - debug: 
+      var: servicios
+  
