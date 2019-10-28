@@ -42,4 +42,12 @@
     register: servicios
   - debug: 
       var: servicios
+
+  - name: Archivo Host
+    win_command: cmd.exe /c type hosts
+    args:
+      chdir: C:\Windows\System32\drivers\etc
+    register: hosts
+  - debug: 
+      var: hosts
   
