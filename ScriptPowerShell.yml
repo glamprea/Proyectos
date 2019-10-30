@@ -1,5 +1,11 @@
---
-- hosts: all 
+---
+- name: Copy file
+  hosts: all
   tasks:
+  - name: Copy file Windows
+    win_copy:
+      src: /var/lib/awx/projects/glamprea/Consulta.ps1
+      dest: C:\Consulta.ps1
+
   - name: Ejecutar Script PowerShell
     win_shell: C:\Consulta.ps1
