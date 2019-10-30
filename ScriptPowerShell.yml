@@ -3,4 +3,3 @@
   tasks:
   - name: Ejecutar Script PowerShell
     win_shell: D:\scripts\Consulta.ps1
-    register: consulta
