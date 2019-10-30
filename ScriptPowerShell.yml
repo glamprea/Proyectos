@@ -10,5 +10,3 @@
   - name: Ejecutar Script PowerShell
     win_command: powershell.exe -ExecutionPolicy ByPass -File C:/Consulta.ps1
     register: resultado
-  - debug: 
-      var: resultado
