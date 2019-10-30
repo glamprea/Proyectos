@@ -5,58 +5,47 @@
     win_command: cmd.exe /c date /t
     register: fecha
   - debug: var=fecha.stdout_lines
-# - debug: 
-#     var: fecha
 
   - name: Hora
     win_command: cmd.exe /c time /t
     register: hora
   - debug: var=hora.stdout_lines
-# - debug: 
-#     var: hora
       
   - name: Nombre Host
     win_command: cmd.exe /c hostname
     register: hostname
-  - debug: 
-      var: hostname
-      
+  - debug: var=hostname.stdout_lines    
+        
   - name: Prueba Ping
     win_command: cmd.exe /c ping cs02-cap-triara
     register: ping
-  - debug: 
-      var: ping
+  - debug: var=ping.stdout_lines
  
   - name: Direcciones IP
     win_command: cmd.exe /c ipconfig
     register: ip
-  - debug: 
-      var: ip
+  - debug: var=ip.stdout_lines
       
   - name: Rutas
     win_command: cmd.exe /c route print
     register: route
-  - debug: 
-      var: route
+  - debug: var=route.stdout_lines
       
   - name: Servicios
     win_command: cmd.exe /c net start
     register: servicios
-  - debug: 
-      var: servicios
+  - debug: var=servicios.stdout_lines
 
   - name: Archivo Host
     win_command: cmd.exe /c type hosts
     args:
       chdir: C:\Windows\System32\drivers\etc
     register: hosts
-  - debug: 
-      var: hosts
+  - debug: var=hosts.stdout_lines
       
   - name: Puerto 8400 Commvault
     win_command: cmd.exe /c cvping localhost -port 8400
     args:
       chdir: C:\Program Files\Commvault\ContentStore\Base
     register: port
-  - debug: 
-      var: port
+  - debug: var=port.stdout_lines
