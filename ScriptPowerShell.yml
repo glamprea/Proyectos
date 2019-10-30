@@ -5,8 +5,11 @@
   - name: Copy file Windows
     win_copy:
       src: /var/lib/awx/projects/glamprea/Consulta.ps1
-      dest: C:\Consulta.ps1
+      dest: C:\Temp\Consulta.ps1
 
   - name: Ejecutar Script PowerShell
-    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Consulta.ps1
+    win_shell: C:\Temp\Consulta.ps1
+#   win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Consulta.ps1
     register: result
+    
+  - debug: var=result.stdout_lines    
