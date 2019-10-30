@@ -9,7 +9,7 @@
 
   - name: Ejecutar Script PowerShell
 #   win_shell: C:\Temp\Consulta.ps1
-    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Consulta.ps1
+    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Temp\Consulta.ps1
     register: result
     
   - debug: var=result.stdout_lines    
