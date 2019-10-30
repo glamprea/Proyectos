@@ -2,5 +2,5 @@
 - hosts: all 
   tasks:
   - name: Ejecutar Script PowerShell
-    win_command: powershell.exe -ExecutionPolicy ByPass -File D:\scripts\Consulta.ps1
+    win_command: D:\scripts\Consulta.ps1
     register: consulta
