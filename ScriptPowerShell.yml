@@ -1,8 +1,7 @@
 ---
-- name: Copy file
-  hosts: all
+- hosts: all
   tasks:
-  - name: Copy file Windows
+  - name: Copiar Script a Servidor
     win_copy:
       src: /var/lib/awx/projects/glamprea/Consulta.ps1
       dest: C:\Temp\Consulta.ps1
@@ -11,4 +10,18 @@
     win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Temp\Consulta.ps1
     register: result
     
-  - debug: var=result.stdout_lines    
+  - debug: var=result.stdout_lines
+  
+  - name: Eliminar Script en Servidor
+    win_find:
+      paths: C:\Temp
+      patterns: 'Consulta.ps1'
+      age: 0d
+      file_type: file
+    register: files_to_delete
+
+  - name: Ansible Remove Files Older
+    win_file:
+      path: "{{ item.path }}"
+      state: absent
+    with_items: "{{ files_to_delete.files }}"
