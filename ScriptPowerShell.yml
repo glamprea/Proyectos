@@ -8,5 +8,5 @@
       dest: C:\Consulta.ps1
 
   - name: Ejecutar Script PowerShell
-    win_command: powershell.exe -ExecutionPolicy ByPass -File C:/Consulta.ps1
-    register: resultado
+    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Consulta.ps1
+    register: result
