@@ -4,53 +4,44 @@
   - name: Fecha y Hora
     command: date
     register: fecha
-  - debug: 
-      var: fecha
+  - debug: var=fecha.stdout_lines
    
   - name: Nombre Host
     command: hostname
     register: hostname
-  - debug: 
-      var: hostname
+  - debug: var=hostname.stdout_lines
       
   - name: Memoria
     command: free -m
     register: memoria
-  - debug: 
-      var: memoria
+  - debug: var=memoria.stdout_lines
       
   - name: Prueba Ping
     command: ping -c3 cs02-cap-triara
     register: ping
-  - debug: 
-      var: ping
+  - debug: var=ping.stdout_lines
  
   - name: Direcciones IP
     command: ip a
     register: ip
-  - debug: 
-      var: ip
+  - debug: var=ip.stdout_lines
       
   - name: Rutas
     command: ip route
     register: route
-  - debug: 
-      var: route
+  - debug: var=route.stdout_lines
       
   - name: Servicios List
     command: simpana list
     register: servicios1
-  - debug: 
-      var: servicios1
+  - debug: var=servicios1.stdout_lines
       
   - name: Servicios Status
     command: simpana status
     register: servicios2
-  - debug: 
-      var: servicios2
+  - debug: var=servicios2.stdout_lines
 
   - name: Archivo Host
     command: cat /etc/hosts
     register: hosts
-  - debug: 
-      var: hosts
+  - debug: var=hosts.stdout_lines
