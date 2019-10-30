@@ -4,8 +4,9 @@
   - name: Fecha
     win_command: cmd.exe /c date /t
     register: fecha
-  - debug: 
-      var: fecha
+  - debug: var=fecha.stdout_lines
+# - debug: 
+#     var: fecha
 
   - name: Hora
     win_command: cmd.exe /c time /t
