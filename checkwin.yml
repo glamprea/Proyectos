@@ -11,8 +11,9 @@
   - name: Hora
     win_command: cmd.exe /c time /t
     register: hora
-  - debug: 
-      var: hora
+  - debug: var=hora.stdout_lines
+# - debug: 
+#     var: hora
       
   - name: Nombre Host
     win_command: cmd.exe /c hostname
