@@ -1,8 +1,7 @@
 ---
-- name: VIM Installed
-  hosts: all
+- hosts: all
   tasks:
-  - name: latest VIM installed
+  - name: Latest VIM installed
     yum:
       name: vim
       state: latest
