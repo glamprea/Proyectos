@@ -1,8 +1,7 @@
 ---
-- name: Update and Reboot Windows Servers
-  hosts: all
+- hosts: all
   tasks:
-  - name: Install all security, critical, and rollup updates
+  - name: Install all Security, Critical, and Rollup Updates
     win_updates:
       category_names:
         - SecurityUpdates
