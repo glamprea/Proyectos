@@ -1,6 +1,5 @@
 ---
-- name: Upgrade Packages
-  hosts: all
+- hosts: all
   tasks:
   - name: Upgrade all packages
     yum:
