@@ -6,4 +6,5 @@
     service:
       name: httpd
       state: started
+    register: result
 
