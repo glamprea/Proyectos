@@ -8,10 +8,8 @@
         - CriticalUpdates
         - UpdateRollups
     register: update_result        
-  - debug: var=update_result.stdout_lines
-
+  
   - name: Reboot host if required
     win_reboot:
     when: update_result.reboot_required
-    register: result        
-  - debug: var=result.stdout_lines
+    register: result
