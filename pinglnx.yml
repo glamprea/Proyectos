@@ -4,3 +4,6 @@
   tasks:
   - name: ping
     ping:
+    register: result
+    
+  - debug: var=result.stdout_lines   
