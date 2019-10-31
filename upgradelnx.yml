@@ -5,4 +5,4 @@
     yum:
       name: '*'
       state: latest
-    register: fecha
+    register: result
