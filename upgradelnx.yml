@@ -5,5 +5,3 @@
     yum:
       name: '*'
       state: latest
-    register: result
-  - debug: var=result.stdout_lines
