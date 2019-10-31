@@ -5,4 +5,3 @@
     win_service:
       name: SNMP
     register: result
-  - debug: var=result.stdout_lines
