@@ -6,10 +6,9 @@
       src: /var/lib/awx/projects/glamprea/Consulta.ps1
       dest: C:\Temp\Consulta.ps1
 
-  - name: Ejecutar Script PowerShell
+  - name: Ejecutar Script en PowerShell
     win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Temp\Consulta.ps1
     register: result
-    
   - debug: var=result.stdout_lines
   
   - name: Eliminar Script en Servidor
