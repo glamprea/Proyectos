@@ -1,6 +1,5 @@
 ---
-- name: Copy file from url
-  hosts: all
+- hosts: all
   tasks:
   - name: Copy file Linux from URL
     get_url:
