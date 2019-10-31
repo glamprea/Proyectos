@@ -6,3 +6,5 @@
     service:
       name: httpd
       state: started
+    register: result
+  - debug: var=result.stdout_lines
