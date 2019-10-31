@@ -6,3 +6,5 @@
       src=/var/lib/awx/projects/glamprea/rep.txt
       dest=/tmp/rep
       backup=yes
+    register: result
+  - debug: var=result.stdout_lines
