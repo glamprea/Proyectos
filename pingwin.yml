@@ -1,6 +1,5 @@
 ---
-- name: Ping a Servidores Windows
-  hosts: all 
+- hosts: all 
   tasks:
-  - name: ping
+  - name: Ping a Servidores Windows
     win_ping:
