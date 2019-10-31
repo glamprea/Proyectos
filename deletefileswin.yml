@@ -1,6 +1,5 @@
 ---
-- name: Delete Files Older 7 Day
-  hosts: all
+- hosts: all
   tasks:
   - name: Ansible delete files older than 7 days
     win_find:
