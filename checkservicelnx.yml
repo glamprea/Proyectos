@@ -1,6 +1,5 @@
 ---
-- name: Check Services
-  hosts: all
+- hosts: all
   tasks:
   - name: Validate Services
     service:
