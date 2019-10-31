@@ -1,7 +1,6 @@
 ---
-- name: Ping a Servidores Linux
-  hosts: all 
+- hosts: all 
   tasks:
-  - name: ping
+  - name: Ping a Servidores Linux
     ping:
 
