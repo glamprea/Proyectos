@@ -1,0 +1,26 @@
+---
+- hosts: all
+  tasks:
+  - name: Copiar Script a Servidor
+    win_copy:
+      src: /var/lib/awx/projects/glamprea/Reinicia.ps1
+      dest: C:\Reinicia.ps1
+
+  - name: Ejecutar Script en PowerShell
+    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Reinicia.ps1
+    register: result
+  - debug: var=result.stdout_lines
+  
+  - name: Eliminar Script en Servidor
+    win_find:
+      paths: C:\
+      patterns: 'Reinicia.ps1'
+      age: 0d
+      file_type: file
+    register: files_to_delete
+
+  - name: Ansible Remove Files Older
+    win_file:
+      path: "{{ item.path }}"
+      state: absent
+    with_items: "{{ files_to_delete.files }}"
