@@ -24,17 +24,11 @@
       state: absent
     with_items: "{{ files_to_delete1.files }}"
     
-  - name: Eliminar HTML en Servidor
-    win_find:
-      paths: C:\Temp
-      patterns: 'servicios.html'
-      age: 0d
-      file_type: file
-    register: files_to_delete2
-
-  - name: Ansible Remove Files Older HTML
-    win_file:
-      path: "{{ item.path }}"
-      state: absent
-    with_items: "{{ files_to_delete2.files }}"
-  
+  - name: Enviar Correo  
+    mail:
+      host: 172.22.88.6
+      port: 25
+      subject: Ansible Report
+      body: System {{ ansible_hostname }} has been successfully provisioned.  
+      from: ansible@telmexla.net.co
+      to: gustavo.lamprea@claro.com.co
