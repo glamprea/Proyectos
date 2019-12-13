@@ -25,12 +25,9 @@
     with_items: "{{ files_to_delete.files }}"
   
   - name: Send e-mail
-    hosts: localhost
     mail:
       host: 172.22.88.6
       port: 25
       subject: Resultado Consulta Servicios
       body: Hola, este es el resultado de la consulta de servicios con PowerShell
       to: gustavo.lamprea@claro.com.co
-      attach: C:\temp\servicios.html
-      secure: starttls
