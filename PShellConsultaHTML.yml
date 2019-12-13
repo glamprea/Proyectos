@@ -18,16 +18,23 @@
       file_type: file
     register: files_to_delete
 
-  - name: Ansible Remove Files Older
+  - name: Ansible Remove Files Older Script
+    win_file:
+      path: "{{ item.path }}"
+      state: absent
+    with_items: "{{ files_to_delete.files }}"
+    
+    - name: Eliminar HTML en Servidor
+    win_find:
+      paths: C:\Temp
+      patterns: 'servicios.html'
+      age: 0d
+      file_type: file
+    register: files_to_delete
+
+  - name: Ansible Remove Files Older HTML
     win_file:
       path: "{{ item.path }}"
       state: absent
     with_items: "{{ files_to_delete.files }}"
   
-  - name: Send e-mail
-    mail:
-      host: 172.22.88.6
-      port: 25
-      subject: Resultado Consulta Servicios
-      body: Hola, este es el resultado de la consulta de servicios con PowerShell
-      to: gustavo.lamprea@claro.com.co
