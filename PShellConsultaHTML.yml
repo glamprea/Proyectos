@@ -9,7 +9,6 @@
   - name: Ejecutar Script en PowerShell
     win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Temp\Consultahtml.ps1
     register: result
-  - debug: var=result.stdout_lines
   
   - name: Eliminar Script en Servidor
     win_find:
@@ -24,3 +23,13 @@
       path: "{{ item.path }}"
       state: absent
     with_items: "{{ files_to_delete.files }}"
+  
+  - name: Sending an e-mail using StartTLS to the remote machine
+    mail:
+      host: 172.22.88.6
+      port: 25
+      subject: Resultado Consulta Servicios
+      body: Hola, este es el resultado de la consulta de servicios con PowerShell
+      from: ansible@telmexla.net.co
+      to: gustavo.lamprea@claro.com.co
+      attach: C:\temp\servicios.html
