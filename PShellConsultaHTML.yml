@@ -26,7 +26,7 @@
     
   - name: Enviar Correo  
     mail:
-      host: 172.22.88.6
+      host: localhost
       port: 25
       subject: Ansible Report
       body: System {{ ansible_hostname }} has been successfully provisioned.  
