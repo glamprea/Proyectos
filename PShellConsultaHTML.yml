@@ -23,12 +23,3 @@
       path: "{{ item.path }}"
       state: absent
     with_items: "{{ files_to_delete1.files }}"
-    
-  - name: Enviar Correo  
-    mail:
-      host: localhost
-      port: 25
-      subject: Ansible Report
-      body: System {{ ansible_hostname }} has been successfully provisioned.  
-      from: ansible@telmexla.net.co
-      to: gustavo.lamprea@claro.com.co
