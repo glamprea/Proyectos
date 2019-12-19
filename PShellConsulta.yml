@@ -9,7 +9,7 @@
   - name: Ejecutar Script en PowerShell
     win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Temp\Consulta.ps1
     register: result
-  - debug: var=result.stdout_lines
+  - debug: var=result
   
   - name: Eliminar Script en Servidor
     win_find:
