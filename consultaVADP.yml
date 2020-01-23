@@ -2,4 +2,4 @@
 - host: all
   task:
   - name: Valida Transporte
-    command: 'py D:/scripts/consultasqlVADP.py'
+    win_command: py D:/scripts/consultasqlVADP.py
