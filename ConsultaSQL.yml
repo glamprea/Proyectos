@@ -3,7 +3,7 @@
   tasks:
   - name: Ejecutar Consulta SQL
     win_shell: sqlcmd -S 172.22.1.102\ENTERPRISE2012 -i E:\consulta.sql >> E:\resultado.txt
-    register: result
+    register: results
   
   - name: Ejecutar Consulta SQL
     win_shell: sqlcmd -S 172.22.1.102\ENTERPRISE2012 -i E:\consulta.sql
