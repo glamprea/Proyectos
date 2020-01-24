@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: Valida Transporte VADP
-    win_command: py D:/scripts/consultasqlVADP.py
