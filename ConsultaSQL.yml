@@ -2,6 +2,6 @@
 - hosts: all
   tasks:
   - name: Ejecutar Consulta SQL
-    win_shell: sqlcmd -S 172.22.1.102\ENTERPRISE2012 -i E:\consulta.sql
+    win_shell: sqlcmd -S 172.22.1.102\ENTERPRISE2012 -i E:\consulta.sql >> E:\resultado.txt
     register: result
   - debug: var=result.stdout_lines
