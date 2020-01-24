@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+  - name: Install all Security, Critical, and Rollup Updates
+    win_updates:
+      category_names:
+        - SecurityUpdates
+        - CriticalUpdates
+        - UpdateRollups
+    register: update_result        
+  
+  - name: Reboot host if required
+    win_reboot:
+    when: update_result.reboot_required
+    register: result
