@@ -3,3 +3,5 @@
   tasks:
   - name: Valida Transporte
     win_command: py D:\scripts\consultasqlVADP.py
+    register: result
+  - debug: var=result.stdout_lines
