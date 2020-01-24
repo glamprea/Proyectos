@@ -2,6 +2,6 @@
 - hosts: all
   tasks:
   - name: Ejecutar Consulta SQL
-    win_command: cmd.exe -File E:\consulta.sql
+    win_command: cmd.exe sqlcmd -S 172.22.1.102\ENTERPRISE2012 -i E:\consulta.sql
     register: result
   - debug: var=result.stdout_lines
