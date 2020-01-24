@@ -1,0 +1,5 @@
+---
+- host: all
+  task:
+  - name: Valida Transporte
+    command: D:/scripts/consultasqlVADP.py
