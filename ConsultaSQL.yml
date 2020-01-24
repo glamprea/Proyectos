@@ -2,6 +2,6 @@
 - hosts: all
   tasks:
   - name: Ejecutar Script en PowerShell
-    win_shell: Invoke-Sqlcmd -Query "SELECT TOP 3 [CIT_NCODE],[CIT_CNAME],[DEP_NCODE],[REG_NCODE],[CIT_CPOLITICAL_DIVISION],[CTY_NCODE],[CIT_COPERATIONAL_CODE],[MET_NCODE],[CIT_BENABLE],[CIT_DMODIFIED_DATE],[CIT_CDATE_CREATE],[CIT_CUSER_CREATE] ,[CIT_CDATE_MODIFY],[CIT_CUSER_MODIFY],[OPC_NCURRENT_CENTER],[AFC_NCODE_COLLECTION],[AFC_NCODE_DELIVERY],[CIT_CLATITUDE],[CIT_CLONGITUDE] FROM [SPOKE_Transact].[dbo].[ADM_CITY]" -ServerInstance "172.22.1.102\ENTERPRISE2012"
+    win_command: cmd.exe -File E:\consulta.sql
     register: result
   - debug: var=result.stdout_lines
