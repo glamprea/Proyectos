@@ -1,7 +1,7 @@
 ---
 - hosts: all
   tasks:
-  - name: Ejecutar Script en PowerShell
+  - name: Ejecutar Consulta SQL
     win_command: cmd.exe -File E:\consulta.sql
     register: result
   - debug: var=result.stdout_lines
