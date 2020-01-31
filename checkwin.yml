@@ -4,17 +4,20 @@
   - name: Fecha
     win_command: cmd.exe /c date /t
     register: fecha
-  - debug: var=fecha.stdout_lines
+  - debug:
+      msg: "FECHA: {{ fecha.stdout }}"
 
   - name: Hora
     win_command: cmd.exe /c time /t
     register: hora
-  - debug: var=hora.stdout_lines
+  - debug:
+      msg: "HORA: {{ hora.stdout }}"
       
   - name: Nombre Host
     win_command: cmd.exe /c hostname
     register: hostname
-  - debug: var=hostname.stdout_lines    
+  - debug:
+      msg: "HOSTNAME: {{ hostname.stdout }}"
         
   - name: Prueba Ping
     win_command: cmd.exe /c ping cs02-cap-triara
