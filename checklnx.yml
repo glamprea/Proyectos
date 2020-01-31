@@ -4,12 +4,14 @@
   - name: Fecha y Hora
     command: date
     register: fecha
-  - debug: var=fecha.stdout_lines
+  - debug:
+      msg: "FECHA: {{ fecha.stdout }}"
    
   - name: Nombre Host
     command: hostname
     register: hostname
-  - debug: var=hostname.stdout_lines
+  - debug:
+      msg: "HOSTNAME: {{ hostname.stdout }}"
       
   - name: Memoria
     command: free -m
