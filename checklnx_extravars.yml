@@ -16,3 +16,4 @@
     register: servicios1
   - debug:
       msg: "SERVIDOR: {{ inventory_hostname }}"
+      var=servicios1.stdout_lines
