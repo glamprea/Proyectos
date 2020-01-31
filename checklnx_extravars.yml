@@ -15,4 +15,4 @@
     command: simpana {{ COMANDO }}
     register: servicios1
   - debug: var=servicios1.stdout_lines
-    msg: "System {{ inventory_hostname }}"
+      msg: "System {{ inventory_hostname }}"
