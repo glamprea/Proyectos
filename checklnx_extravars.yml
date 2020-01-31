@@ -4,8 +4,9 @@
   - name: Fecha y Hora
     command: date
     register: fecha
-  - debug: var=fecha.stdout_lines
-   
+  - debug: 
+      msg: "FECHA: {{ fecha.stdout }}"
+      
   - name: Nombre Host
     command: hostname
     register: hostname
@@ -14,6 +15,4 @@
   - name: Servicios (Simpana)
     command: simpana {{ COMANDO }}
     register: servicios1
-  - debug:
-      msg: "SERVIDOR: {{ inventory_hostname }}"
-      var=servicios1.stdout_lines
+  - debug: var=servicios1.stdout_lines
