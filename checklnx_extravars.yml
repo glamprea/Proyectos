@@ -16,5 +16,4 @@
   - name: Servicios (Simpana)
     command: simpana {{ COMANDO }}
     register: servicios1
-  - debug:
-      msg: "RESULTADO DEL COMANDO: {{ servicios1.stdout_lines }}"
+  - debug: var=servicios1.stdout_lines
