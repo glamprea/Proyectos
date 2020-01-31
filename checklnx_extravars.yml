@@ -1,0 +1,17 @@
+---
+- hosts: all 
+  tasks:
+  - name: Fecha y Hora
+    command: date
+    register: fecha
+  - debug: var=fecha.stdout_lines
+   
+  - name: Nombre Host
+    command: hostname
+    register: hostname
+  - debug: var=hostname.stdout_lines
+
+  - name: Servicios (Simpana)
+    command: simpana {{ COMANDO }}
+    register: servicios1
+  - debug: var=servicios1.stdout_lines
