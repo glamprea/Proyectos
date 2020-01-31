@@ -10,8 +10,9 @@
   - name: Nombre Host
     command: hostname
     register: hostname
-  - debug: var=hostname.stdout_lines
-
+  - debug: 
+      msg: "NOMBRE DEL HOST: {{ hostname.stdout }}"
+      
   - name: Servicios (Simpana)
     command: simpana {{ COMANDO }}
     register: servicios1
