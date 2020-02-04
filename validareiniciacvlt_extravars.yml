@@ -14,6 +14,6 @@
       msg: "NOMBRE DEL HOST: {{ hostname.stdout }}"
       
   - name: Servicios (Simpana)
-    command: simpana {{ COMANDO }}
-    register: servicios1
-  - debug: var=servicios1.stdout_lines
+    command: "{{ COMANDO }}"
+    register: resultado
+  - debug: var=resultado.stdout_lines
