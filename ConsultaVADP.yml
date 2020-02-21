@@ -2,5 +2,5 @@
 - hosts: all
   tasks:
   - name: Valida Transporte VADP
-    win_command: D:\scripts\vadp.bat
+    win_command: C:\temp\vadp.bat
     register: result
