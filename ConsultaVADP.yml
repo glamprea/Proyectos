@@ -1,7 +1,12 @@
 ---
 - hosts: all
   tasks:
-  - name: Valida Transporte
+  - name: Valida Transporte 1
     win_command: cmd.exe py D:\scripts\consultasqlVADP.py
     register: result
   - debug: var=result.stdout_lines
+  
+  - name: Valida Transporte 2
+    win_command: powershell.exe -ExecutionPolicy ByPass -File D:\scripts\consultasqlVADP.py
+    register: result2
+  - debug: var=result2.stdout_lines
