@@ -9,4 +9,3 @@
   - name: Valida Transporte 2
     win_command: cmd.exe py D:\scripts\consultasqlVADP.py >> D:\Consulta.txt
     register: result2
-  - debug: var=result2.stdout_lines
