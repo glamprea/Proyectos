@@ -2,5 +2,5 @@
 - hosts: all
   tasks:
   - name: Valida Transporte VADP
-    win_command: cmd.exe D:\scripts\consultasqlVADP.py >> C:\temp\Consulta.txt
+    win_command: D:\scripts\vadp.bat
     register: result
