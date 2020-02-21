@@ -1,11 +1,6 @@
 ---
 - hosts: all
   tasks:
-  - name: Valida Transporte 1
-    win_command: cmd.exe D:\scripts\consultasqlVADP.py
+  - name: Valida Transporte VADP
+    win_command: cmd.exe /c py D:\scripts\consultasqlVADP.py >> C:\temp\Consulta.txt
     register: result
-  - debug: var=result.stdout_lines
-  
-  - name: Valida Transporte 2
-    win_command: cmd.exe D:\scripts\consultasqlVADP.py >> C:\temp\Consulta.txt
-    register: result2
