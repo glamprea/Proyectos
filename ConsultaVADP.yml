@@ -7,5 +7,5 @@
   - debug: var=result.stdout_lines
   
   - name: Valida Transporte 2
-    win_command: cmd.exe py D:\scripts\consultasqlVADP.py >> D:\Consulta.txt
+    win_command: cmd.exe D:\scripts\consultasqlVADP.py > C:\Consulta.txt
     register: result2
